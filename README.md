@@ -40,3 +40,5 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 cd ../WebAPI_App.WebAPI
 dotnet add package Swashbuckle.AspNetCore
 Swagger için yükledim. API dökümünde kullanılıyor yani swagger ui oluşturup API yi web üzerinden test ediyorum.
+
+-----------------------------------------------------------------------------------------------
