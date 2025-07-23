@@ -9,10 +9,8 @@ namespace WebAPI_App.DataAccess
         private readonly AppDbContext _context;
         public ProductRepository(AppDbContext context) => _context = context;
 
-        public void Add(Product product)
-        {
+        public void Add(Product product) => _context.Products.Add(product);
 
-        }
 
         public void Delete(int id)
         {
