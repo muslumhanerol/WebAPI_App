@@ -1,4 +1,4 @@
-//CRUD
+//CRUD INTERFACE
 using WebAPI_App.Entities;
 namespace WebAPI_App.DataAccess
 {
