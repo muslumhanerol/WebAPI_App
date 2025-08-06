@@ -18,19 +18,13 @@ namespace WebAPI_App.DataAccess
         public List<Product> GetAll() => _context.Products.ToList();
 
 
-        public Product? GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public Product? GetById(int id) => _context.Products.Find(id);
 
-        public void Save()
-        {
-            throw new NotImplementedException();
-        }
 
-        public void Update(Product product)
-        {
-            throw new NotImplementedException();
-        }
+        public void Save() => _context.SaveChanges();
+
+
+        public void Update(Product product) => _context.Products.Update(product);
+
     }
 }

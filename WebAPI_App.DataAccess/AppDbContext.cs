@@ -8,7 +8,6 @@ namespace WebAPI_App.DataAccess
 
         public DbSet<Product> Products => Set<Product>();
 
-
     }
 
 }
