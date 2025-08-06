@@ -12,15 +12,11 @@ namespace WebAPI_App.DataAccess
         public void Add(Product product) => _context.Products.Add(product);
 
 
-        public void Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public void Delete(Product product) => _context.Products.Remove(product);
 
-        public List<Product> GetAll()
-        {
-            throw new NotImplementedException();
-        }
+
+        public List<Product> GetAll() => _context.Products.ToList();
+
 
         public Product? GetById(int id)
         {
