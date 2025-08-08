@@ -11,13 +11,22 @@ namespace WebAPI_App.Business
 
         public void Add(Product product)
         {
-            throw new NotImplementedException();
+            _repo.Add(product);
+            _repo.Save();
         }
 
-        public void Delete(Product product)
+        public void Delete(int id)
         {
-            throw new NotImplementedException();
+            var p = _repo.GetById(id); //repo üzerinden id yi kontrol et, 
+            if (p != null) //eşlesen varsa
+            {
+                throw new ArgumentException($"Product with id {id} not found.");
+            }
+            _repo.Delete(p);
+            _repo.Save();
         }
+        {
+        
 
         public List<Product> GetAll()
         {
