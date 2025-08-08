@@ -20,27 +20,26 @@ namespace WebAPI_App.Business
             var p = _repo.GetById(id); //repo üzerinden id yi kontrol et, 
             if (p != null) //eşlesen varsa
             {
-                throw new ArgumentException($"Product with id {id} not found.");
+                _repo.Delete(p);
+                _repo.Save();
             }
-            _repo.Delete(p);
-            _repo.Save();
-        }
-        {
-        
-
-        public List<Product> GetAll()
-        {
-            throw new NotImplementedException();
         }
 
-        public Product? GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
+
+        public List<Product> GetAll() => _repo.GetAll();
+
+
+        public Product? GetById(int id) => _repo.GetById(id);
+
 
         public void Update(Product product)
         {
-            throw new NotImplementedException();
+            var existing = _repo.GetById(product.Id); //producttan gelen id bilgisini kontrol et
+            if (existing == null) throw new Exception("Bulunamadı");
+            existing.Name = product.Name; // gelen productın name bilgisini, mevcut olanın name bilgisi ile değiştir
+            existing.Price = product.Price; // gelen productın price bilgisini, mevcut olanın price bilgisi ile değiştir
+            _repo.Update(existing); //repodaki updateyi çağır bunu içerisindeki değiştiğin bilgileri at.
+            _repo.Save(); //değişiklikleri kaydet
         }
     }
 
