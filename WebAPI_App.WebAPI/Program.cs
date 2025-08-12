@@ -3,8 +3,13 @@ using WebAPI_App.DataAccess;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// DefaultConnection = appsettings.Development.json içerisinde ConnectionStrings adı.
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))
+);
+
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+//IProductRepository çağrıldığında ProductRepository gönderilecek.
 
 builder.Services.AddOpenApi();
 
