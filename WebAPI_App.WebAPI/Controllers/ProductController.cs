@@ -13,7 +13,9 @@ namespace WebAPI_App.WebAPI.Controllers
         private readonly IProductService _service;
         public ProductController(IProductService service) => _service = service;
 
-        [HttpGet] public IActionResult GetAll() => Ok(_service.GetAll());
+        [HttpGet]
+        //Tüm veriyi getir()=>_service içerisinden GetAll getir.
+        public IActionResult GetAll() => Ok(_service.GetAll());
 
 
     }
