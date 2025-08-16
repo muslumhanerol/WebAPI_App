@@ -16,8 +16,6 @@ namespace WebAPI_App.WebAPI.Controllers
         [HttpGet]
         //Tüm veriyi getir()=>_service içerisinden GetAll getir.
         public IActionResult GetAll() => Ok(_service.GetAll());
-
-
     }
 }
 

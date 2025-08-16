@@ -42,3 +42,5 @@ dotnet add package Swashbuckle.AspNetCore
 Swagger için yükledim. API dökümünde kullanılıyor yani swagger ui oluşturup API yi web üzerinden test ediyorum.
 
 -----------------------------------------------------------------------------------------------
+
+## AddMigration= dotnet ef migrations add InitialCreate --project ../WebAPI_App.DataAccess --startup-project .
