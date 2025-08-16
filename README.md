@@ -1,5 +1,7 @@
 # WebAPI_APP
 
+# start project = dotnet run
+
 # 1. Ana klasörü oluştur
 mkdir WebAPI_App
 cd WebAPI_App
@@ -44,3 +46,5 @@ Swagger için yükledim. API dökümünde kullanılıyor yani swagger ui oluştu
 -----------------------------------------------------------------------------------------------
 
 ## AddMigration= dotnet ef migrations add InitialCreate --project ../WebAPI_App.DataAccess --startup-project .
+
+## dotnet ef database update --project ../WebAPI_App.DataAccess --startup-project .
