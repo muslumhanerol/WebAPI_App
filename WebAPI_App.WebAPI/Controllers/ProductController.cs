@@ -32,6 +32,14 @@ namespace WebAPI_App.WebAPI.Controllers
             _service.Add(product);
             return CreatedAtAction(nameof(GetById), new { id = product.Id }, product);
         }
+
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, Product product)
+        {
+            if (id != product.Id) return BadRequest();
+            _service.Update(product);
+            return Ok(); //200            
+        }
     }
 }
 
