@@ -33,12 +33,19 @@ namespace WebAPI_App.WebAPI.Controllers
             return CreatedAtAction(nameof(GetById), new { id = product.Id }, product);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("{id}")] //id ye göre güncelleme olacak.
         public IActionResult Update(int id, Product product)
         {
-            if (id != product.Id) return BadRequest();
-            _service.Update(product);
+            if (id != product.Id) return BadRequest(); //id ile producttan gelen id eşleşmiyorsa BadRequest 401 döndür.
+            _service.Update(product); //sorun yoksa update işlemini yap.
             return Ok(); //200            
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            _service.Delete(id); //serviceden Deleye yi çağır içerisine id yi at.
+            return Ok(); //200
         }
     }
 }
