@@ -1,6 +1,7 @@
 # WebAPI_APP
 
-# start project = dotnet run
+# start project = "WebAPI_App.WebAPI içerisindeyken" dotnet run
+# açılan pencerede adres = http://localhost:5240/swagger/index.html
 
 # 1. Ana klasörü oluştur
 mkdir WebAPI_App
