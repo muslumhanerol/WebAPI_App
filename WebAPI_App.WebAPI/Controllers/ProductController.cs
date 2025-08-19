@@ -18,6 +18,14 @@ namespace WebAPI_App.WebAPI.Controllers
         //Tüm veriyi getir()=>_service içerisinden GetAll getir.
         public IActionResult GetAll() => Ok(_service.GetAll());
 
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            var p = _service.GetById(id);
+            return p == null ? NotFound() : Ok(p);
+        }
+
+
 
         [HttpPost]
         //Yeni veri ekle
@@ -28,6 +36,7 @@ namespace WebAPI_App.WebAPI.Controllers
         }
     }
 }
+
 
 //ok = 200, sorun yok demek.
 //nameof = adı gibi isimler bulmak için kullanılır. Değişken adını değiştirdiğimizde nameof yazmazsak eşleşmediğini anlamayız, nameof verirsek eşleşmediğini anlarız.
