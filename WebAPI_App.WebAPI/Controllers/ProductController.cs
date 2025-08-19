@@ -25,8 +25,6 @@ namespace WebAPI_App.WebAPI.Controllers
             return p == null ? NotFound() : Ok(p);
         }
 
-
-
         [HttpPost]
         //Yeni veri ekle
         public IActionResult Add(Product product)
